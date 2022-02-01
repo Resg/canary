@@ -11,6 +11,14 @@ app.get('/', (req, res) => {
     }
 })
 
+app.get('/test', (req, res) => {
+    if (process.env.AB === '1') {
+        res.send('Hello World!')
+    } else {
+        res.send('World, Hello!')
+    }
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
